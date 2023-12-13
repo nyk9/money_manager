@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <title>マネーのマネージャー</title>
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+    <div id="header">
+        <header>マネーのマネージャー</header>
+    </div>
+    <div id="main">
+        <form name="input">
+            <p>
+                年月日：<input type="date" name="date" />
+            </p>
+            <p>
+                項目：<select name="item" >
+                    <option value="">項目</option>
+                    <optgroup label="住宅費(固定費)" class="house">
+                        <option value="家賃・地代" class="house_child">家賃・地代</option>
+                        <option value="ローン" class="house_child">ローン</option>
+                        <option value="水道光熱費" class="house_child">水道光熱費</option>
+                        <option value="固定資産税" class="house_child">固定資産税</option>
+                        <option value="保険" class="house_child">保険</option>
+                        <option value="生活インフラ" class="house_child">生活インフラ</option>
+                        <option value="年払いコスト" class="house_child">年払いコスト</option>
+                        <option value="税金" class="house_child">税金</option>
+                        <option value="その他固定費" class="house_child">その他固定費</option>
+                    </optgroup>
+                    <optgroup label="食費" class="eat">
+                        <option value="スーパー" class="eat_child">スーパー</option>
+                        <option value="コンビニ" class="eat_child">コンビニ</option>
+                        <option value="外食" class="eat_child">外食</option>
+                    </optgroup>
+                    <optgroup label="日用品" class="daily">
+                        <option value="服" class="daily_child">服</option>
+                        <option value="靴・鞄・帽子等" class="daily_child">靴・鞄・帽子等</option>
+                        <option value="医療費" class="daily_child">医療費</option>
+                        <option value="薬" class="daily_child">薬</option>
+                        <option value="健康" class="daily_child">健康</option>
+                        <option value="散髪" class="daily_child">散髪</option>
+                        <option value="美容" class="daily_child">美容</option>
+                        <option value="日用品" class="daily_child">日用品</option>
+                    </optgroup>
+                    <optgroup label="趣味・娯楽" class="pastime">
+                        <option value="Entertainment" class="pastime_child">交際費</option>
+                        <option value="遊興費" class="pastime_child">遊興費</option>
+                        <option value="趣味" class="pastime_child">趣味</option>
+                        <option value="ゲーム" class="pastime_child">ゲーム</option>
+                    </optgroup>
+                    <option value="その他" class="other">その他</option>
+                </select>
+            </p>
+            <p>
+                支出額(円)：<input type="number" name="cost"  />
+            </p>
+            <input type="button" id="submit" value="登録" />
+        </form>
+    </div>
+    
+    <div id="table" >
+        <table>
+            <tr>
+                <th>年月日</th>
+                <th>項目</th>
+                <th>支出額</th>
+                <th class="remove" hidden>削除</th>
+            </tr>
+        </table>
+    </div>
+    <d id="js">
+        <div id="Chart">
+            <div id="chart">
+                <canvas id="breakdown" ></canvas>
+            </div>
+            <input type="button" id="pie-chart" value="内訳表示"/>
+        </div>
+        <div id="input-json">
+            <input type="button" id="stringify-json" value="JSONファイルを入力"/>
+        </div>
+        <div id="output-json">
+            <input type="button" id="parse-json" value="JSONファイルに出力"/>
+        </div>
+        <div id="save-data">
+            <input type="button" id="save" value="保存" />
+        </div>
+        <div id="delete-data">
+            <input type="button" id="delete" value="削除"/>
+        </div>
+    </div>
+</body>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="money.js"></script>
+</html>

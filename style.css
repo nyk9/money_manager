@@ -1,0 +1,46 @@
+html{
+	background-color: #7d7d7d;
+}
+/* header{
+ 
+} */
+optgroup.house{
+	background-color: #00FF00;
+	color: #000000;
+}
+optgroup.eat{
+	background-color: #ff0000;
+	color: #000000;
+}
+optgroup.daily{
+	background-color: #ffff00;
+	color: #000000;
+}
+optgroup.pastime{
+	background-color: #00ffff;
+	color: #000000;
+}
+option.other{
+	background-color: #ff00ff;
+	color: #000000;
+}
+table{
+	border-collapse: collapse;
+}
+table td,table th{
+	border: 1px solid;
+}
+
+.house_child{
+	background-color: #00FF00;
+}
+.other_child{
+	background-color: #dc77dc;
+}
+
+#table{
+	float: left;
+}
+#js{
+	float: right;
+}
